@@ -27,6 +27,26 @@ btn.addEventListener('click', function () {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             const data = JSON.parse(this.response);
+            inputBox.style.display = 'none'
+            infoBox.style.display = 'block'
+            profilePic.src = data.avatar_url
+            followers.innerHTML = data.followers
+            following.innerHTML = data.following
+            repository.innerHTML = data.public_repos
+            profileName.innerHTML= data.name
+            profileUsername.innerHTML = `@${data.login}`
+            profileBio.innerHTML = data.bio
+            profileLocation.innerHTML = data.location
+            profileWorkplace.innerHTML = data.company
+            websiteLink.href = data.blog
+            profileLink.href = data.html_url
+
+            if(!data.company){
+                profileWorkplace.innerHTML = 'Not specified'
+            }
+            if(!data.location){
+                profileLocation.innerHTML = 'Not specified'
+            }
 
         } 
     }
