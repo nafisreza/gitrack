@@ -16,3 +16,19 @@ const websiteLink = document.querySelector('#websiteLink')
 const profileLink = document.querySelector('#profileLink')
 
 let username
+
+btn.addEventListener('click', function () {
+    username = document.getElementById('username').value
+
+    const requestUrl = `https://api.github.com/users/${username}`
+
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.response);
+
+        } 
+    }
+    xhr.send()
+})
