@@ -215,3 +215,10 @@ button.message:hover {
   background: rgba(88, 164, 151, 0.5);
 }
 /* Profile Card :End */
+
+/* Footer*/
+   footer{
+    display: flex;
+    justify-content: center;
+    font-size: 0.8em;
+   }
